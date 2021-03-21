@@ -1,20 +1,35 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 
-import { category_item } from '../styles'
+import {category_item} from '../styles';
 
-function CategoryItem({ item , onSelect}) {
+function CategoryItem({item, onSelect}) {
+  const [isActive, setIsActive] = React.useState(false);
+
+  function textStyle() {
+    if (isActive) {
+      return [category_item.defaultTitle, category_item.activeTitle];
+    }
+
+    return category_item.defaultTitle;
+  }
+
+  function containerStyle() {
+    if (isActive) {
+      return [category_item.defaultContainer, category_item.activeContainer];
+    }
+    return category_item.defaultContainer;
+  }
   return (
-    <TouchableOpacity onPress={onSelect}>
-      <View style={category_item.container}>
-      <Image
-          style={category_item.image}
-          source={{ uri: item.strCategoryThumb }}
-        />
-        <Text style={category_item.title} >{item.strCategory}</Text>
-      </View>
+    <TouchableOpacity
+      style={containerStyle()}
+      onPress={() => {
+        onSelect();
+        setIsActive(true);
+      }}>
+      <Text style={textStyle()}>{item.strCategory}</Text>
     </TouchableOpacity>
-  )
+  );
 }
 
-export { CategoryItem };
+export {CategoryItem};

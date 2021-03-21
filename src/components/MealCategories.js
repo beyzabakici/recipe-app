@@ -1,47 +1,44 @@
 import React from 'react';
-import { SafeAreaView, View, Text, FlatList } from 'react-native';
+import {SafeAreaView, View, Text, FlatList} from 'react-native';
 import axios from 'axios';
 
-import { CategoryItem } from '../components'
+import {CategoryItem} from '../components';
 
 const apiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php';
 
-function MealCategories({category}) {
-  console.log(category)
-
+function MealCategories({category, defaultCategory}) {
   const [mealCategories, setMealCategories] = React.useState([]);
-  const [selectedCategory, setSelectedCategory] = React.useState('Beef');
 
   function getCategories() {
-    axios.get(apiUrl).then((response) => setMealCategories(response.data.categories));
-  }
-
-  function getSelectedCategory(item) {
-    setSelectedCategory(item.strCategory);
+    axios.get(apiUrl).then(({data}) => {
+      const {categories} = data;
+      setMealCategories(categories);
+      defaultCategory(categories[0].strCategory);
+    });
   }
 
   React.useEffect(() => {
-    getCategories();  
-    category = selectedCategory;
+    getCategories();
   }, []);
 
-  const renderMealCategory = ({ item }) => {
+  const renderMealCategory = ({item}) => {
     return (
-      <CategoryItem item={item} onSelect={() => setSelectedCategory(item.strCategory)} />
-      )
-    }   
+      <CategoryItem item={item} onSelect={() => category(item.strCategory)}/>
+    );
+  };
+
   return (
     <SafeAreaView>
       <View>
         <FlatList
           horizontal={true}
-          keyExtractor={(item) => item.idCategory}
+          keyExtractor={item => item.idCategory}
           data={mealCategories}
           renderItem={renderMealCategory}
         />
       </View>
     </SafeAreaView>
-  )
+  );
 }
 
-export { MealCategories };
+export {MealCategories};
