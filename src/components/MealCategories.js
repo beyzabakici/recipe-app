@@ -23,7 +23,7 @@ function MealCategories({category, defaultCategory}) {
 
   const renderMealCategory = ({item}) => {
     return (
-      <CategoryItem item={item} onSelect={() => category(item.strCategory)}/>
+      <CategoryItem item={item} onSelect={() => category(item.strCategory)} />
     );
   };
 
@@ -31,6 +31,7 @@ function MealCategories({category, defaultCategory}) {
     <SafeAreaView>
       <View>
         <FlatList
+          showsHorizontalScrollIndicator={false}
           horizontal={true}
           keyExtractor={item => item.idCategory}
           data={mealCategories}

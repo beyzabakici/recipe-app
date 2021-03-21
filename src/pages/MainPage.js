@@ -1,12 +1,16 @@
 import React from 'react';
-import {SafeAreaView, View, Text, FlatList} from 'react-native';
+import {SafeAreaView, FlatList} from 'react-native';
 import axios from 'axios';
 
 import {MealCategories, MealItem} from '../components';
 
-function MainPage() {
+function MainPage({navigation}) {
   const [categoryList, setCategoryList] = React.useState([]);
   const [selectedCategory, setSelectedCategory] = React.useState('');
+
+  React.useEffect(() => {
+    getCategoryList();
+  }, [selectedCategory]);
 
   function getCategoryList() {
     axios
@@ -24,15 +28,22 @@ function MainPage() {
     setSelectedCategory(defaultCategory);
   }
 
-  React.useEffect(() => {
-    getCategoryList();
-  }, [selectedCategory]);
-
   const renderMealList = ({item}) => {
-    return <MealItem item={item} />;
+    return (
+      <MealItem
+        item={item}
+        onSelect={() =>
+          navigation.navigate('Detail Page', {
+            id: item.idMeal,
+            name: item.strMeal,
+          })
+        }
+      />
+    );
   };
+
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView>
       <MealCategories
         category={handleCategory}
         defaultCategory={handleDefaultCategory}
