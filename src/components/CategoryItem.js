@@ -3,10 +3,9 @@ import {Text, TouchableOpacity} from 'react-native';
 
 import {category_item} from '../styles';
 
-function CategoryItem({item, onSelect, activeCategory, isActive}) {
+function CategoryItem({item, onSelect, isActive}) {
   function handleOnPress() {
     onSelect();
-    activeCategory();
   }
 
   return (

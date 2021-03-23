@@ -3,7 +3,6 @@ import {SafeAreaView, View, Text, FlatList} from 'react-native';
 import axios from 'axios';
 
 import {CategoryItem} from '../components';
-import {set} from 'react-native-reanimated';
 
 const apiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php';
 
@@ -23,13 +22,17 @@ function MealCategories({category, defaultCategory}) {
     getCategories();
   }, []);
 
+  function handleOnSelected(item) {
+    category(item);
+    setActiveCategory(item);
+  }
+
   const renderMealCategory = ({item}) => {
     return (
       <CategoryItem
         item={item}
-        onSelect={() => category(item.strCategory)}
+        onSelect={() => handleOnSelected(item.strCategory)}
         isActive={activeCategory}
-        activeCategory={() => setActiveCategory(item.strCategory)}
       />
     );
   };
