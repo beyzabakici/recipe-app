@@ -22,11 +22,23 @@ const category_item = StyleSheet.create({
     fontSize: 15,
   },
   activeContainer: {
+    flex: 1,
+    height: device_height / 14,
+    width: device_width / 3.2,
+    backgroundColor: 'white',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    margin: 2,
+    borderRadius: 5,
     borderBottomColor: 'tomato',
     borderBottomWidth: 2,
   },
   activeTitle: {
+    fontStyle: 'italic',
+    fontWeight: 'bold',
     color: 'tomato',
+    fontSize: 15,
   },
 });
 const meal_item = StyleSheet.create({

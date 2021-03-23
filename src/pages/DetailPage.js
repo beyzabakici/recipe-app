@@ -7,9 +7,9 @@ import {
   Linking,
   ScrollView,
   Image,
+  SafeAreaView,
 } from 'react-native';
 import axios from 'axios';
-
 import {detail_page} from '../styles';
 
 function DetailPage({navigation, route}) {
@@ -33,27 +33,25 @@ function DetailPage({navigation, route}) {
   }
 
   return (
-    <ScrollView>
+    <SafeAreaView>
       <Button onPress={() => navigation.goBack()} title="< Back" />
       <View style={detail_page.container}>
         <Text style={detail_page.title}>{name}</Text>
         <Image style={detail_page.image} source={{uri: detail.strMealThumb}} />
         <View style={detail_page.area}>
-          <View style={detail_page.area_icon}>
-            <Text style={detail_page.text_default}>{detail.strArea}</Text>
-          </View>
-          <View style={detail_page.area_icon}>
-            <Text style={detail_page.text_default}>{detail.strCategory}</Text>
-          </View>
+          <Text style={detail_page.text_default}>{detail.strArea}</Text>
+          <Text style={detail_page.text_default}>{detail.strCategory}</Text>
         </View>
-        <Text style={detail_page.text_default}>{detail.strInstructions}</Text>
+        <ScrollView style={detail_page.scroll_ares}>
+          <Text style={detail_page.text_default}>{detail.strInstructions}</Text>
+        </ScrollView>
         <TouchableOpacity
           style={detail_page.youtube_button}
           onPress={redirectToYoutubeLink}>
           <Text style={detail_page.text_youtube}>YouTube</Text>
         </TouchableOpacity>
       </View>
-    </ScrollView>
+    </SafeAreaView>
   );
 }
 
