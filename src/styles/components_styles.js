@@ -79,6 +79,12 @@ const random_slide = StyleSheet.create({
     flex: 1,
     margin: 2,
   },
+  cricle_timer: {
+    position: 'absolute',
+    zIndex: 99,
+    top: 2,
+    left: 2,
+  },
 });
 
 export {category_item, meal_item, random_slide};

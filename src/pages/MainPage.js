@@ -28,19 +28,15 @@ function MainPage({navigation}) {
   function handleDefaultCategory(defaultCategory) {
     setSelectedCategory(defaultCategory);
   }
+  function navigateToDetail(meal) {
+    navigation.navigate('Detail Page', {
+      id: meal.idMeal,
+      name: meal.strMeal,
+    });
+  }
 
   const renderMealList = ({item}) => {
-    return (
-      <MealItem
-        item={item}
-        onSelect={() =>
-          navigation.navigate('Detail Page', {
-            id: item.idMeal,
-            name: item.strMeal,
-          })
-        }
-      />
-    );
+    return <MealItem item={item} onSelect={() => navigateToDetail(item)} />;
   };
 
   return (
