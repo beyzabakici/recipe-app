@@ -41,7 +41,7 @@ function MainPage({navigation}) {
 
   return (
     <SafeAreaView style={main_page.container}>
-      <RandomSlide />
+      <RandomSlide navigation={navigation} />
       <View style={main_page.meal_container}>
         <MealCategories
           category={handleCategory}

@@ -5,7 +5,7 @@ import {CountdownCircleTimer} from 'react-native-countdown-circle-timer';
 
 import {random_slide} from '../styles/components_styles';
 
-function RandomSlide() {
+function RandomSlide({navigation}) {
   const [randomMeal, setRandomMeal] = React.useState([]);
   const [repeatRandom, setRepeatRandom] = React.useState(false);
 
@@ -23,9 +23,17 @@ function RandomSlide() {
   function handleRandom() {
     setRepeatRandom(true);
   }
+  function navigateToDetail(meal) {
+    navigation.navigate('Detail Page', {
+      id: meal.idMeal,
+      name: meal.strMeal,
+    });
+  }
 
   return (
-    <TouchableOpacity style={random_slide.container}>
+    <TouchableOpacity
+      style={random_slide.container}
+      onPress={() => navigateToDetail(randomMeal)}>
       <View style={random_slide.cricle_timer}>
         <CountdownCircleTimer
           isPlaying
