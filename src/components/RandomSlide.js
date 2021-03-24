@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, View, Text} from 'react-native';
+import {Image, View, Text, TouchableOpacity} from 'react-native';
 import axios from 'axios';
 
 import {random_slide} from '../styles/components_styles';
@@ -17,9 +17,13 @@ function RandomSlide() {
       .then(({data}) => setRandomMeal(data.meals[0]));
   }
   return (
-    <View style={random_slide.container}>
+    <TouchableOpacity style={random_slide.container}>
       <Text style={random_slide.title}>{randomMeal.strMeal}</Text>
-    </View>
+      <Image
+        style={random_slide.image}
+        source={{uri: randomMeal.strMealThumb}}
+      />
+    </TouchableOpacity>
   );
 }
 

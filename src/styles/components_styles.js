@@ -64,11 +64,20 @@ const random_slide = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   title: {
-    fontSize: 20,
+    alignSelf: 'center',
+    position: 'absolute',
+    fontSize: 24,
+    bottom: 0,
+    zIndex: 99,
+    color: 'tomato',
+    backgroundColor: 'rgba(225,225,225,0.7)',
+    textAlign: 'center',
+  },
+  image: {
+    flex: 1,
+    margin: 2,
   },
 });
 
