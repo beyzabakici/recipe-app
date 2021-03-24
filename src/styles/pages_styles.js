@@ -21,4 +21,9 @@ const detail_page = StyleSheet.create({
   },
 });
 
-export {detail_page};
+const main_page = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
+export {detail_page, main_page};

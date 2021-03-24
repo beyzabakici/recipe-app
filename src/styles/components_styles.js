@@ -6,31 +6,27 @@ const device_height = Dimensions.get('window').height;
 const category_item = StyleSheet.create({
   defaultContainer: {
     flex: 1,
-    height: device_height / 14,
+    height: device_height / 18,
     width: device_width / 3.2,
     backgroundColor: 'white',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    margin: 2,
-    borderRadius: 5,
   },
   defaultTitle: {
     fontStyle: 'italic',
     fontWeight: 'bold',
     color: 'gray',
-    fontSize: 15,
+    fontSize: 14,
   },
   activeContainer: {
     flex: 1,
-    height: device_height / 14,
+    height: device_height / 18,
     width: device_width / 3.2,
     backgroundColor: 'white',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    margin: 2,
-    borderRadius: 5,
     borderBottomColor: 'tomato',
     borderBottomWidth: 2,
   },
@@ -44,10 +40,9 @@ const category_item = StyleSheet.create({
 const meal_item = StyleSheet.create({
   container: {
     backgroundColor: 'white',
-    borderRadius: 20,
-    margin: 5,
+    margin: 2,
     height: device_height / 3,
-    width: device_width / 2.1,
+    width: device_width / 2.05,
   },
   title: {
     flex: 1,
@@ -62,8 +57,18 @@ const meal_item = StyleSheet.create({
   },
   image: {
     flex: 1,
-    borderRadius: 15,
   },
 });
 
-export {category_item, meal_item};
+const random_slide = StyleSheet.create({
+  container: {
+    width: device_width,
+    height: device_height / 5,
+    backgroundColor: 'blue',
+  },
+  title: {
+    fontSize: 200,
+  },
+});
+
+export {category_item, meal_item, random_slide};
