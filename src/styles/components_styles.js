@@ -39,10 +39,10 @@ const category_item = StyleSheet.create({
 });
 const meal_item = StyleSheet.create({
   container: {
+    flex: 2,
+    height: device_height / 3,
     backgroundColor: 'white',
     margin: 2,
-    height: device_height / 3,
-    width: device_width / 2.05,
   },
   title: {
     flex: 1,
@@ -62,12 +62,13 @@ const meal_item = StyleSheet.create({
 
 const random_slide = StyleSheet.create({
   container: {
-    width: device_width,
-    height: device_height / 5,
-    backgroundColor: 'blue',
+    flex: 1,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   title: {
-    fontSize: 200,
+    fontSize: 20,
   },
 });
 

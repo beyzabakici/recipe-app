@@ -25,5 +25,8 @@ const main_page = StyleSheet.create({
   container: {
     flex: 1,
   },
+  meal_container:{
+    flex: 4,
+  },
 });
 export {detail_page, main_page};

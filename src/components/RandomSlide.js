@@ -14,11 +14,11 @@ function RandomSlide() {
   function getRandomMeal() {
     axios
       .get('https://www.themealdb.com/api/json/v1/1/random.php')
-      .then(({data}) => setRandomMeal(data.meals));
+      .then(({data}) => setRandomMeal(data.meals[0]));
   }
   return (
     <View style={random_slide.container}>
-      <Text style={random_slide.title}>{randomMeal.idMeal}</Text>
+      <Text style={random_slide.title}>{randomMeal.strMeal}</Text>
     </View>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, FlatList} from 'react-native';
+import {SafeAreaView, FlatList, View} from 'react-native';
 import axios from 'axios';
 
 import {MealCategories, MealItem, RandomSlide} from '../components';
@@ -46,16 +46,18 @@ function MainPage({navigation}) {
   return (
     <SafeAreaView style={main_page.container}>
       <RandomSlide />
-      <MealCategories
-        category={handleCategory}
-        defaultCategory={handleDefaultCategory}
-      />
-      <FlatList
-        keyExtractor={item => item.idMeal}
-        data={categoryList}
-        renderItem={renderMealList}
-        numColumns="2"
-      />
+      <View style={main_page.meal_container}>
+        <MealCategories
+          category={handleCategory}
+          defaultCategory={handleDefaultCategory}
+        />
+        <FlatList
+          keyExtractor={item => item.idMeal}
+          data={categoryList}
+          renderItem={renderMealList}
+          numColumns="2"
+        />
+      </View>
     </SafeAreaView>
   );
 }
