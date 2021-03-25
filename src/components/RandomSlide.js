@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, View, Text, TouchableOpacity, Animated} from 'react-native';
+import {Image, View, Text, TouchableOpacity} from 'react-native';
 import axios from 'axios';
 import {CountdownCircleTimer} from 'react-native-countdown-circle-timer';
 

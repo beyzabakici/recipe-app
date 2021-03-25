@@ -28,6 +28,7 @@ function MainPage({navigation}) {
   function handleDefaultCategory(defaultCategory) {
     setSelectedCategory(defaultCategory);
   }
+
   function navigateToDetail(meal) {
     navigation.navigate('Detail Page', {
       id: meal.idMeal,

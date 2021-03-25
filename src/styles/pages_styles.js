@@ -5,9 +5,12 @@ const device_height = Dimensions.get('window').height;
 
 const detail_page = StyleSheet.create({
   container: {
+    flex: 1,
     padding: 10,
   },
-  title:{},
+  title:{
+    
+  },
   image:{
     width: device_width,
     height: device_height / 3,
@@ -25,7 +28,7 @@ const main_page = StyleSheet.create({
   container: {
     flex: 1,
   },
-  meal_container:{
+  meal_container: {
     flex: 4,
   },
 });
