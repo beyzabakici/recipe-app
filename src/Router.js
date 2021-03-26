@@ -9,12 +9,8 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Main Page"
-          component={MainPage}
-          headerShown={false}
-        />
+      <Stack.Navigator headerMode="none">
+        <Stack.Screen name="Main Page" component={MainPage} />
         <Stack.Screen mode="modal" name="Detail Page" component={DetailPage} />
       </Stack.Navigator>
     </NavigationContainer>

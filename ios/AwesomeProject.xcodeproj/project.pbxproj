@@ -86,6 +86,7 @@
 		13B07FAE1A68108700A75B9A /* AwesomeProject */ = {
 			isa = PBXGroup;
 			children = (
+				D90C067D260DFFD40057D212 /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -122,6 +123,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				C1B323E72EA156CBBBF24E99 /* Pods */,
+				AFB8088E5A1D4EDB9068CDD2 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -137,6 +139,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		AFB8088E5A1D4EDB9068CDD2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		C1B323E72EA156CBBBF24E99 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,9 +154,16 @@
 				2421C06073B51DE6ED2E45C5 /* Pods-AwesomeProject-AwesomeProjectTests.debug.xcconfig */,
 				441E77FFC7006222498E4A51 /* Pods-AwesomeProject-AwesomeProjectTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		D90C067D260DFFD40057D212 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 /* End PBXGroup section */
 

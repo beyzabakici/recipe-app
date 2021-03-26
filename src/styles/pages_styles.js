@@ -8,19 +8,69 @@ const detail_page = StyleSheet.create({
     flex: 1,
     padding: 10,
   },
-  title:{
-    
+  area: {
+    position: 'relative',
   },
-  image:{
+  title: {
+    textAlign: 'center',
+    alignSelf: 'center',
+    fontWeight: 'bold',
+    fontSize: 20,
+    color: 'white',
+    position: 'absolute',
+    zIndex: 99,
+    backgroundColor: 'rgba(0,0,0,0.25)',
+    margin: 5,
+    padding: 3,
+  },
+  country_view: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: 5,
+    backgroundColor: 'rgba(0,0,0,0.25)',
+    padding: 3,
+  },
+  category_view: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: 5,
+    right: 1,
+    backgroundColor: 'rgba(0,0,0,0.25)',
+    padding: 3,
+  },
+  title_default: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    margin: 5,
+    color: 'white',
+  },
+  text_default: {
+    fontSize: 16,
+    fontWeight: '300',
+    margin: 5,
+  },
+  image: {
     width: device_width,
     height: device_height / 3,
   },
   scroll_area: {
-    padding: 5,
+    margin: 10,
   },
   youtube_button: {
-    width: device_width,
-    backgroundColor: 'blue',
+    borderColor: 'red',
+    borderWidth: 2,
+    borderStyle: 'solid',
+    borderRadius: 15,
+    flexDirection: 'row',
+    alignSelf: 'center',
+    paddingHorizontal: 10,
+    paddingVertical: 1,
+    position: 'absolute',
+    bottom: 20,
+    right: 20,
+    backgroundColor: 'white',
   },
 });
 

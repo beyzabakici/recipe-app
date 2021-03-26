@@ -51,6 +51,7 @@ const meal_item = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
     alignSelf: 'center',
+    textAlign: 'center',
     bottom: 10,
     fontSize: 15,
     backgroundColor: 'rgba(0,0,0,0.5)',
